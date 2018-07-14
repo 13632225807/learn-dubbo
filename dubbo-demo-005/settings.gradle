@@ -1,0 +1,8 @@
+rootProject.name = 'demo'
+include ':common'
+include ':provider'
+include ':consumer'
+
+project(':common').projectDir = "$rootDir/common" as File
+project(':provider').projectDir = "$rootDir/provider" as File
+project(':consumer').projectDir = "$rootDir/consumer" as File

@@ -1,0 +1,4 @@
+rootProject.name = 'learn'
+include 'child1'
+include 'child2'
+
