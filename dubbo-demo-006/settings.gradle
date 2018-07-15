@@ -1,12 +1,5 @@
 rootProject.name = 'demo'
-include ':common'
-include ':provider'
-include ':consumer'
-include ':web'
-
-project(':common').projectDir = "$rootDir/common" as File
-project(':provider').projectDir = "$rootDir/provider" as File
-project(':consumer').projectDir = "$rootDir/consumer" as File
-project(':web').projectDir = "$rootDir/web" as File
-
-
+include 'common'
+include 'provider'
+include 'consumer'
+include 'web'
