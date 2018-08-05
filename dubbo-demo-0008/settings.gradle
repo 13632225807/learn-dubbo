@@ -1,4 +1,4 @@
 rootProject.name = 'demo'
-include 'common'
+include 'api'
 include 'provider'
-include 'spring-web'
+include 'consumer'
