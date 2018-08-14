@@ -22,6 +22,7 @@ public class ConsumerMain implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         SayHelloResponse response = sayHello.sayHello(new SayHelloRequest(null, 1));
+//        SayHelloResponse response = sayHello.sayHello(new SayHelloRequest("1", 1));
         System.out.println("response: " + response);
     }
 }

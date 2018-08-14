@@ -14,8 +14,8 @@ public class SayHelloRequest implements Serializable {
     @NotNull(message = "msg不能为空")
     private String msg;
 
-    @NotNull(message = "amount不能为空")
-    @Min(value = 1, message = "amount不能小于1")
+//    @NotNull(message = "amount不能为空")
+//    @Min(value = 1, message = "amount不能小于1")
     private Integer amount;
 
 }
