@@ -5,6 +5,6 @@
     <dubbo:application name="hello-world-app"></dubbo:application>
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:protocol name="dubbo" port="20881"/>
-    <dubbo:service interface="demo.SayHello" ref="sayHelloImpl"/>
+    <dubbo:service interface="demo.SayHello" ref="sayHelloImpl" timeout="2000"/>
     <bean id="sayHelloImpl" class="demo.SayHelloImpl"/>
 </beans>

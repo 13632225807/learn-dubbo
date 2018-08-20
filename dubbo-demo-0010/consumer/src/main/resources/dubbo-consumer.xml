@@ -5,5 +5,5 @@
     <dubbo:application name="consumer-of-hello-world-app"/>
     <dubbo:consumer timeout="5000" />
     <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"/>
-    <dubbo:reference id="sayHello" interface="demo.SayHello" check="false" timeout="2000"/>
+    <dubbo:reference id="sayHello" interface="demo.SayHello" check="false" timeout="6000"/>
 </beans>
