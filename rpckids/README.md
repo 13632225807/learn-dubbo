@@ -1,3 +1,7 @@
+该项目：https://github.com/pyloque/rpckids
+
+介绍：https://zhuanlan.zhihu.com/p/35720383
+
 rpckids
 --
 RPC framework based on netty for kids
