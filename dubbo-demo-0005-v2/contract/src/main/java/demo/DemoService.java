@@ -1,6 +1,6 @@
 package demo;
 
-public interface SayHello {
+public interface DemoService {
 
     String sayHello(String name);
 
