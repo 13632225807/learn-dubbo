@@ -52,7 +52,7 @@ project(":provider") {  // 配置子项目 provider
     compile project(":contract") // 依赖子项目 contract
     compile "org.apache.dubbo:dubbo:$dubboVersion"
     compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
-    
+
     testCompile "junit:junit:$junitVersion"
   }
 

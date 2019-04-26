@@ -52,6 +52,7 @@ $ gradle init --type pom
 
 使用了更新版本的 dubbo 2.7.1，包名已经变成了 org.apache 开头。优化gradle配置。
 
+
 ## 006. dubbo集成spark web框架
 见 [dubbo-demo-0006](dubbo-demo-0006)。
 
