@@ -1,0 +1,59 @@
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+ext {
+  dubboVersion = '2.7.1'
+  zookeeperVersion = '3.4.10'
+  zkclientVersion = '0.10'
+  junitVersion = '4.12'
+}
+
+allprojects {
+  apply plugin: 'java'
+
+  repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenCentral()
+  }
+
+}
+
+// 配置子项目 contract
+project(":contract") {
+
+  dependencies {
+
+    testCompile "junit:junit:$junitVersion"
+
+  }
+}
+
+// 配置子项目 consumer
+project(":consumer") {
+
+  dependencies {
+    compile project(":contract") // 依赖子项目 contract
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+
+    testCompile "junit:junit:$junitVersion"
+  }
+
+}
+
+project(":provider") {  // 配置子项目 provider
+
+  dependencies {
+
+    compile project(":contract") // 依赖子项目 contract
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+    
+    testCompile "junit:junit:$junitVersion"
+  }
+
+}
