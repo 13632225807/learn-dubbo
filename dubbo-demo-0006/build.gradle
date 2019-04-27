@@ -1,16 +1,64 @@
-allprojects  {
-  apply plugin: 'maven'
-  group = 'com.example'
-  version = '1.0-SNAPSHOT'
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+ext {
+  dubboVersion = '2.7.1'
+  zookeeperVersion = '3.4.10'
+  zkclientVersion = '0.10'
+  junitVersion = '4.12'
 }
 
-subprojects {
+allprojects {
   apply plugin: 'java'
-  sourceCompatibility = 1.5
-  targetCompatibility = 1.5
 
   repositories {
-    mavenLocal()
-    maven { url "http://repo.maven.apache.org/maven2" }
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenCentral()
   }
+
+}
+
+// 配置子项目 contract
+project(":contract") {
+
+  dependencies {
+
+    testCompile "junit:junit:$junitVersion"
+
+  }
+}
+
+
+project(":provider") {  // 配置子项目 provider
+
+  dependencies {
+
+    compile project(":contract") // 依赖子项目 contract
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+
+    testCompile "junit:junit:$junitVersion"
+  }
+
+}
+
+
+// 配置子项目 web
+project(":web") {
+
+  dependencies {
+    compile project(":contract") // 依赖子项目 contract
+
+    compile "com.sparkjava:spark-core:2.7.2"
+
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+
+    testCompile "junit:junit:$junitVersion"
+  }
+
 }
