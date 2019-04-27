@@ -1,6 +1,6 @@
-package demo;
+package demo2;
 
-import demo.Calculate;
+import demo1.Calculate;
 
 public class CalculateService {
 
