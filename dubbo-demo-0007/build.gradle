@@ -1,16 +1,91 @@
-allprojects  {
-  apply plugin: 'maven'
-  group = 'com.example'
-  version = '1.0-SNAPSHOT'
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+
+buildscript {
+
+    ext {
+        springBootVersion = '2.1.4.RELEASE'
+        aliyunMavenUrl = 'https://maven.aliyun.com/repository/public/'
+    }
+
+    repositories {
+      maven { url "${aliyunMavenUrl}" }
+      mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-subprojects {
-  apply plugin: 'java'
-  sourceCompatibility = 1.5
-  targetCompatibility = 1.5
+ext {
+    dubboVersion = '2.7.1'
+    zookeeperVersion = '3.4.10'
+    lombokVersion = '1.18.0'
+    junitVersion = '4.12'
+}
 
-  repositories {
-    mavenLocal()
-    maven { url "http://repo.maven.apache.org/maven2" }
-  }
+
+allprojects {
+    apply plugin: 'java'
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        maven { url "${aliyunMavenUrl}" }
+        mavenCentral()
+    }
+
+    configurations {
+        all*.exclude group:'ch.qos.logback', module: 'logback-classic'
+    }
+
+    dependencies {
+        compile "org.projectlombok:lombok:${lombokVersion}"
+    }
+
+}
+
+// 配置子项目 contract
+project(":contract") {
+
+    dependencies {
+
+        testCompile "junit:junit:$junitVersion"
+
+    }
+}
+
+// 配置子项目 provider
+project(":provider") {
+
+    dependencies {
+      compile project(":contract")
+      compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+      compile "org.apache.dubbo:dubbo:${dubboVersion}"
+      compile "org.apache.dubbo:dubbo-dependencies-zookeeper:${dubboVersion}"
+
+      testCompile "junit:junit:${junitVersion}"
+    }
+
+}
+
+
+// 配置子项目 web
+project(":spring-boot-web") {
+
+    dependencies {
+        compile project(":contract")
+        compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+        compile ("org.apache.dubbo:dubbo:${dubboVersion}")
+        compile "org.apache.dubbo:dubbo-dependencies-zookeeper:${dubboVersion}"
+
+        testCompile "junit:junit:${junitVersion}"
+    }
+
 }

@@ -1,6 +1,0 @@
-description = ''
-dependencies {
-    compile project(':common')
-    compile group: 'com.alibaba', name: 'dubbo', version:'2.5.3'
-    compile group: 'com.101tec', name: 'zkclient', version:'0.10'
-}

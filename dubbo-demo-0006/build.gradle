@@ -8,7 +8,6 @@ sourceCompatibility = 1.8
 ext {
   dubboVersion = '2.7.1'
   zookeeperVersion = '3.4.10'
-  zkclientVersion = '0.10'
   junitVersion = '4.12'
 }
 
