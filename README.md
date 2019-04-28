@@ -1,24 +1,6 @@
 # dubbo
 
-默认使用 gradle 4.1 构建。maven 会特别说明，使用 3.5 版本。
-
-## 001. 构建多模块项目（gradle版）
-见 [dubbo-demo-0001](dubbo-demo-0001)，这是一个纯Java项目，使用IDEA打开最外层的build.gradle即可。
-
-其中有child1和child2两个子项目。child2依赖child1，所以child2的build.gradle中有：
-```
-dependencies {
-    compile project(':child1')
-    //...
-}
-```
-运行child2中的`CalculateService`类，输出`3`。
-
-## 002. 构建多模块项目（maven版）
-
-见 [dubbo-demo-0002](dubbo-demo-0002)，这是一个纯Java项目。
-
-和gradle版类似。
+默认使用 gradle 5 构建。
 
 ## 003. dubbo入门（maven版）
 
