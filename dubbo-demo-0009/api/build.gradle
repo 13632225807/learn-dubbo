@@ -1,9 +1,0 @@
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-description = ''
-dependencies {
-    compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
-}
