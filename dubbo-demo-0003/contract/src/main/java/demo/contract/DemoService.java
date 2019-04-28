@@ -1,4 +1,4 @@
-package demo;
+package demo.contract;
 
 public interface DemoService {
 

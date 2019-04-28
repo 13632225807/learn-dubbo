@@ -7,6 +7,6 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:service interface="demo.DemoService" class="demo.DemoServiceImpl"/>
+    <dubbo:service interface="demo.contract.DemoService" class="demo.provider.DemoServiceImpl"/>
 
 </beans>
