@@ -1,4 +1,4 @@
-rootProject.name = 'dubbo-demo-0005-v3'
+rootProject.name = 'dubbo-demo-0003'
 include 'contract'
 include 'provider'
 include 'consumer'
