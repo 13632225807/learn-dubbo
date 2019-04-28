@@ -2,28 +2,16 @@
 
 默认使用 gradle 5 构建。
 
-## 003. dubbo入门（maven版）
+## dubbo-demo-0001
 
-见 [dubbo-demo-0003](dubbo-demo-0003)，基于 maven。
-代码来自 [一个简单的案例带你入门Dubbo分布式框架](https://blog.csdn.net/u012702547/article/details/77601538)，略作改动。
+使用较旧的 dubbo 版本 （2.5.3）构建 dubbo 服务和消费者。
 
-需要安装 zookeeper，作为注册中心。
+## dubbo-demo-0002
 
-测试过程中遇到了注册zookeeper慢的问题，解决方案：
-* [解决linux dubbo注册到zookeeper 很慢 3-10分钟问题](https://cn.aliyun.com/jiaocheng/128140.html)
-* [记一次本机InetAddress.getLocalHost()引起的项目启动变慢及解决过程](https://blog.csdn.net/puma_dong/article/details/53096149)
+使用较新版本的 dubbo。新版本的 dubbo 有一个更改是将 com.alibaba包 换成 org.apache 。2.7.3 版本是过度版本，两个包都存在。
 
-以下均使用 gradle。
+[Dubbo: 第一个 Dubbo 项目](https://blog.letiantian.me/dubbo/dubbo-hello-world.html) 。
 
-## 004. dubbo入门
-
-见 [dubbo-demo-0004](dubbo-demo-0004)，拷贝自[dubbo-demo-0003](dubbo-demo-0003)， 保留了pom.xml文件。运行下面的命令生成的gradle文件：
-```
-$ gradle init --type pom
-```
-
-## 005. dubbo入门
-见 [dubbo-demo-0005](dubbo-demo-0005)，拷贝自[dubbo-demo-0004](dubbo-demo-0004)，删掉了 pom.xml 文件，精简了gradle配置。
 
 ## 005. dubbo入门
 见 [dubbo-demo-0005](dubbo-demo-0005)，拷贝自[dubbo-demo-0004](dubbo-demo-0004)，删掉了 pom.xml 文件，精简了gradle配置。
