@@ -8,6 +8,6 @@
     <dubbo:consumer timeout="5000" />
     <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"/>
 
-    <dubbo:reference id="sayHello" interface="demo.contract.DemoService" check="false"/>
+    <dubbo:reference id="demoService" interface="demo.contract.DemoService" check="false"/>
 
 </beans>
