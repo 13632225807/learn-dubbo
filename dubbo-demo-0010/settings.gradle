@@ -1,4 +1,0 @@
-rootProject.name = 'dubbo-demo-0010'
-include 'api'
-include 'provider'
-include 'consumer'
