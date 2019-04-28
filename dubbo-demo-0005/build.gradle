@@ -42,7 +42,7 @@ allprojects {
     }
 
     configurations {
-        all*.exclude group:'ch.qos.logback', module: 'logback-classic'
+        all*.exclude group:'ch.qos.logback', module: 'logback-classic' // 去掉 logback，保留 log4j
     }
 
     dependencies {

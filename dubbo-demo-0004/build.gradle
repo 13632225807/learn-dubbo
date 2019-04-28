@@ -52,7 +52,7 @@ project(":web") {
   dependencies {
     compile project(":contract") // 依赖子项目 contract
 
-    compile "com.sparkjava:spark-core:2.7.2"
+    compile "com.sparkjava:spark-core:2.7.2" // 引入 spark web 框架
 
     compile "org.apache.dubbo:dubbo:$dubboVersion"
     compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
