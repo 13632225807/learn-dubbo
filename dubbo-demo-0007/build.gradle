@@ -21,7 +21,7 @@ allprojects {
   }
 
   // 配置除了 contract 模块之外的所有模块
-  if (it.name.endsWith("contract")) {
+  if (!it.name.endsWith("contract")) {
     dependencies {
       compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.0.11.Final'
       compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b09'
@@ -31,14 +31,6 @@ allprojects {
   dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
   }
-
-
-//  dependencies {
-//    compile "javax.validation:validation-api:1.1.0.Final" // 官方文档给的是 1.1.0.GA
-//    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'  // 注意，6.0 以上的 group 是 org.hibernate、org.hibernate.validator 都行
-//    compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
-//    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
-//  }
 
 }
 
