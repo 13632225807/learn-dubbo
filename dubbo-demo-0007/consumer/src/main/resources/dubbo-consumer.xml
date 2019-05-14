@@ -7,6 +7,7 @@
     <dubbo:consumer timeout="5000" />
     <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"/>
 
+    <!--将 validation 设置为 false-->
     <dubbo:reference id="demoService"
                      interface="demo.contract.DemoService"
                      check="false"

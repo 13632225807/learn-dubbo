@@ -7,6 +7,7 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:protocol name="dubbo" port="20881"/>
 
+    <!--配置过滤器-->
     <dubbo:provider filter="default,-validation,customValidation" />
 
     <dubbo:service interface="demo.contract.DemoService"

@@ -12,7 +12,7 @@ ext {
   junitVersion = '4.12'
 }
 
-allprojects {
+subprojects {
   apply plugin: 'java'
 
   repositories {
@@ -38,11 +38,8 @@ allprojects {
 project(":contract") {
 
   dependencies {
-
     compile "javax.validation:validation-api:2.0.1.Final"
-
     testCompile "junit:junit:$junitVersion"
-
   }
 }
 
