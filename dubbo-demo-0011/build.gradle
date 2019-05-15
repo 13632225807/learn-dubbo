@@ -1,0 +1,70 @@
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+ext {
+  dubboVersion = '2.7.1'
+  zookeeperVersion = '3.4.10'
+  zkclientVersion = '0.10'
+  junitVersion = '4.12'
+}
+
+subprojects {
+  apply plugin: 'java'
+
+  repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenCentral()
+  }
+
+  // 配置除了 contract 模块之外的所有模块
+  if (!it.name.endsWith("contract")) {
+    dependencies {
+      compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.0.11.Final'
+      compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b09'
+    }
+  }
+
+  dependencies {
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
+  }
+
+}
+
+// 配置子项目 contract
+project(":contract") {
+
+  dependencies {
+    compile "javax.validation:validation-api:2.0.1.Final"
+    testCompile "junit:junit:$junitVersion"
+  }
+}
+
+// 配置子项目 consumer
+project(":consumer") {
+
+  dependencies {
+    compile project(":contract") // 依赖子项目 contract
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+
+    testCompile "junit:junit:$junitVersion"
+  }
+
+}
+
+project(":provider") {  // 配置子项目 provider
+
+  dependencies {
+
+    compile project(":contract") // 依赖子项目 contract
+    compile "org.apache.dubbo:dubbo:$dubboVersion"
+    compile "org.apache.dubbo:dubbo-dependencies-zookeeper:$dubboVersion"
+
+    testCompile "junit:junit:$junitVersion"
+  }
+
+}
