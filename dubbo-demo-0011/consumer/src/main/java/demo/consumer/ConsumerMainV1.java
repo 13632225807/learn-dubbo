@@ -24,7 +24,7 @@ public class ConsumerMainV1 {
         // 用com.apache.dubbo.rpc.service.GenericService可以替代所有接口引用
         GenericService genericService = reference.get();
 
-        Object name = genericService.$invoke("sayHi", new String[]{""}, new Object[]{ "世界" });
+        Object name = genericService.$invoke("sayHello", new String[]{String.class.getName()}, new Object[]{ "世界" });
         System.out.println(name.getClass().getName());
         System.out.println(name);
 
