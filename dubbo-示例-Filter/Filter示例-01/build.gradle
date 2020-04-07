@@ -14,8 +14,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.0'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
     compile "org.apache.dubbo:dubbo:2.7.1"
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.68'
     compile "org.apache.dubbo:dubbo-dependencies-zookeeper:2.7.1"
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.68'
+
 }

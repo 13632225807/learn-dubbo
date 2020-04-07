@@ -7,13 +7,13 @@ import org.apache.dubbo.rpc.Invoker;
 import org.apache.dubbo.rpc.Result;
 import org.apache.dubbo.rpc.RpcException;
 
-@Activate(group = {Constants.PROVIDER, Constants.CONSUMER})
+@Activate(group = {Constants.PROVIDER})
 public class CustomFilter01 implements org.apache.dubbo.rpc.Filter {
     @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
-        System.out.println("开始");
+        System.out.println("CustomFilter01 开始");
         Result result = invoker.invoke(invocation);
-        System.out.println("结束");
+        System.out.println("CustomFilter01 结束");
         return result;
     }
 }
