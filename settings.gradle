@@ -1,0 +1,15 @@
+rootProject.name = 'dubbo-demo'
+
+include 'dubbo-demo-0001'
+include 'dubbo-demo-0002'
+include 'dubbo-demo-0003'
+include 'dubbo-demo-0004'
+include 'dubbo-demo-0005'
+include 'dubbo-demo-0006'
+include 'dubbo-demo-0007'
+include 'dubbo-demo-0008'
+include 'dubbo-demo-0009'
+include 'dubbo-demo-00010'
+
+include 'dubbo-示例'
+include 'dubbo-示例-泛化调用'
