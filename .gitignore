@@ -1,6 +1,9 @@
 **/.DS_Store
 **/.idea
 **/.gradle
+**/gradle
+**/gradlew
+**/gradlew.bat
 **/target
 **/build
 **/*.iml
